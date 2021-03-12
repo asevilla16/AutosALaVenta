@@ -1,0 +1,125 @@
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: $navbar-height;
+	z-index: $z-navbar;
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+	.container {
+		height: 100%;
+		@include flex();
+		justify-content: space-between;
+		align-items: center;
+	}
+	&-logo {
+		height: 90%;
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+	&-links {
+		@include flex();
+		padding: 10px 0;
+		&-link {
+			line-height: 60px;
+			font-size: 20px;
+			color: $font-color-dark;
+			margin-right: 20px;
+			&.active {
+				position: relative;
+				color: $main-color;
+				&:after {
+					content: '';
+					position: absolute;
+					top: -10px;
+					left: -15px;
+					width: calc(100% + 30px);
+					height: 10px;
+					background-color: $main-color;
+				}
+			}
+		}
+	}
+	&-lang {
+		line-height: 60px;
+		margin-right: 20px;
+		a {
+			color: $font-color-dark;
+			font-weight: 300;
+			&:hover,
+			&:focus {
+				color: $main-color;
+			}
+			&.active {
+				font-weight: bold;
+			}
+		}
+		&-divider {
+			font-weight: 400;
+			position: relative;
+			bottom: -2px;
+			display: inline-block;
+			border-right: 1px solid $font-color-dark;
+			height: 18px;
+			margin: 0 3px;
+		}
+	}
+	&-contact {
+		@include flex();
+		align-items: center;
+		.btn {
+			padding-left: 1.15em;
+			padding-right: 1.15em;
+		}
+	}
+	&-menu-btn {
+		display: none;
+		color: $font-color-dark;
+		font-size: 25px;
+		cursor: pointer;
+		&:hover,
+		&:focus {
+			color: $font-color-dark;
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.navbar {
+		&-links {
+			position: fixed;
+			z-index: $z-navbar-mobile;
+			top: $navbar-height;
+			left: 0;
+			width: 100%;
+			height: calc(100% - 80px);
+			background-color: $white;
+			flex-direction: column;
+			padding: 4.25rem 0 0 0;
+			opacity: 0;
+			visibility: hidden;
+			@include transition(0.2s, all, ease-in-out, 0s);
+			&-link {
+				line-height: 1;
+				color: $gray;
+				margin-right: 0;
+				text-align: center;
+				padding: 1rem;
+				margin-right: 15px;
+				margin-left: 15px;
+				&.active {
+					background-color: #222329;
+				}
+			}
+			&.active {
+				opacity: 0.9;
+				visibility: visible;
+			}
+		}
+		&-menu-btn {
+			display: inline-block;
+		}
+	}
+} // md

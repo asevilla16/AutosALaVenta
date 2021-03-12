@@ -1,0 +1,69 @@
+.car-slick-detail-main {
+	display: flex;
+	align-items: center;
+	.slide {
+		width: 100%;
+		height: 450px;
+		background-position: 50%;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	img {
+		width: auto;
+		height: 100%;
+	}
+}
+.car-slick-detail-img {
+	.slide {
+		margin: 0 5px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+.product-detail-info {
+	h2 {
+		color: $blue;
+	}
+	p {
+		@include font-responsive(16px, 18px, 360px, 1280px);
+		margin: 5px 0px;
+	}
+	span {
+		color: $gray;
+	}
+	&-title-options {
+		font-size: 14px;
+		line-height: 26px;
+		color: #191919;
+		font-weight: 500;
+		letter-spacing: 0.03em;
+		margin: 0 !important;
+		text-transform: uppercase;
+		span {
+			color: $main-color;
+		}
+	}
+}
+@include media-breakpoint-down(md) {
+	.car-slick-detail-main {
+		.slide {
+			height: 280px;
+		}
+	}
+} // md
+@include media-breakpoint-down(sm) {
+	.car-slick-detail-main {
+		.slide {
+			height: 300px;
+		}
+	}
+} //sm
+@include media-breakpoint-down(xs) {
+	.car-slick-detail-main {
+		.slide {
+			height:180px;
+		}
+	}
+} //xs

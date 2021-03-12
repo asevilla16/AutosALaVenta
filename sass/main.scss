@@ -1,0 +1,26 @@
+/*
+* Google Fonts
+*/
+// @import url('https://fonts.googleapis.com/css?family=Lato:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Hind:400,500');
+/*
+* Vendor Files
+*/
+@import '../vendor/bootstrap/scss/bootstrap';
+@import '../vendor/slick/scss/slick';
+
+/*
+* Font Responsive
+*/
+@import '../vendor/font-responsive/font-responsive';
+
+/*
+* Main
+*/
+@import 'variables';
+@import 'setup';
+@import 'type';
+@import 'grid';
+@import 'components';
+@import 'pages';
+@import 'helpers';
